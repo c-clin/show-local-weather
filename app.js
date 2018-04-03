@@ -8,21 +8,18 @@ $body = $("body");
 	    ajaxStop: function() { $body.removeClass("loading"); }    
 	});
 
-	var demo = $('#demo');
 	var getLocationButton = $('#button');
 	var tempToggle = $('.tempToggle');
+	var error = $('#onError');
 	var latitude;
 	var longitude;
 
+	// get weather button
 	getLocationButton.on('click', getLocation);
-
-
-
+	// toggle C/F button
 	tempToggle.on('click', toggleTemp);
 
-
-
-	// toggle fahrenheit and celsius
+	// toggle C/F function
 	function toggleTemp() {
 		if($('#celsius').css('display') =='none') {
 			$('#celsius').css('display', 'block');
@@ -38,13 +35,13 @@ $body = $("body");
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showWeather);
 		} else {
-			demo.html('Geolocation is not supported by your browser.');
+			error.html('Error: Geolocation is not supported by your browser.');
 		}
 	}
 
+	// get weather api call
 	function showWeather(position){
-		demo.innerHTML = 'Latitude: ' + position.coords.latitude + 
-			'<br />Longitude: ' + position.coords.longitude;
+		// retrieve the user's lat and long
 		latitude = position.coords.latitude;
 		longitude = position.coords.longitude;
 
@@ -59,10 +56,10 @@ $body = $("body");
 			var clouds = data.clouds.all;
 			var icon = data.weather[0].icon;
 			var weather = data.weather[0].main;
-			var description = data.weather[0].description;
 			var fahrenheit = celsius * (9/5) + 32;
 			var roundedF = fahrenheit.toFixed(2);
 
+			// hide the celsius temperature on first click
 			$('#celsius').css('display','none');
 
 			$("#name").html(name + ', ');
@@ -75,17 +72,8 @@ $body = $("body");
 			$('#windSpeed').html(windSpeed + "mph");
 			$('#clouds').html(clouds + '%');
 
-
-
-
-
-
 		}).fail(function(error){
 			console.log('fail(): ' + error);
 		})
 	}
 });
-
-
-
-

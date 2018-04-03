@@ -42,6 +42,7 @@ body {
 }
 
 .content {
+	margin-top: 30px;
 	padding: 20px 15px 20px 15px;
 
 }
@@ -58,29 +59,13 @@ body {
     font-size: 20px;
 }
 
-/*.weatherTemp {
-	background-color: rgba(255,255,255,0.4);
-	color: rgba(0,0,0,1);
-	margin: 10px;
-	flex: 1;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px 50px 20px 50px;
-    height: 100px; 
-    font-size: 25px;  	
+#fahrenheit {
+	display: block;
 }
 
-.weatherDescrip {
-	background-color: rgba(255,255,255,0.4);
-	color: rgba(0,0,0,1);
-	margin: 10px;
-	flex: 1;
-    padding: 20px;
-    border-radius: 10px;	
-    margin: 20px 50px 20px 50px;
-    height: 100px;    
-    font-size: 25px;
-}*/
+#celsius {
+	display: block;
+}
 
 .modal {
     display:    none;
@@ -137,9 +122,6 @@ body.loading .modal {
 		padding-left: 20%;
 	}	
 }
-
-
-
 
 
 

@@ -3,17 +3,35 @@
 $(document).ready(function(){
 $body = $("body");
 
-$(document).on({
-    ajaxStart: function() { $body.addClass("loading"); },
-    ajaxStop: function() { $body.removeClass("loading"); }    
-});
+	$(document).on({
+	    ajaxStart: function() { $body.addClass("loading"); },
+	    ajaxStop: function() { $body.removeClass("loading"); }    
+	});
 
 	var demo = $('#demo');
 	var getLocationButton = $('#button');
+	var tempToggle = $('.tempToggle');
 	var latitude;
 	var longitude;
 
 	getLocationButton.on('click', getLocation);
+
+
+
+	tempToggle.on('click', toggleTemp);
+
+
+
+	// toggle fahrenheit and celsius
+	function toggleTemp() {
+		if($('#celsius').css('display') =='none') {
+			$('#celsius').css('display', 'block');
+			$('#fahrenheit').css('display', 'none');
+		} else {
+			$('#celsius').css('display', 'none');
+			$('#fahrenheit').css('display', 'block');			
+		}
+	}
 
 	// get the user's permission to access their current coordinates
 	function getLocation() {
@@ -35,29 +53,32 @@ $(document).on({
 		$.getJSON(url).done(function(data) {
 			var name = data.name;
 			var country = data.sys.country;			
-			var temp = data.main.temp;
+			var celsius = data.main.temp;
 			var icon = data.weather[0].icon;
 			var weather = data.weather[0].main;
 			var description = data.weather[0].description;
-			var fahrenheit = temp * (9/5) + 32;
+			var fahrenheit = celsius * (9/5) + 32;
 			var roundedF = fahrenheit.toFixed(2);
+
+			$('#celsius').css('display','none');
 
 			$("#name").html(name + ', ');
 			$("#country").html(country);
-			$("#temp").html(roundedF + '&#8457');
+			$("#celsius").html(celsius + '&#8451');
+			$("#fahrenheit").html(roundedF + '&#8457');
 			$("#icon").html('<img src="' + icon + '">');
 			$("#weather").html(weather);
 
-			console.log(name, temp, country, icon, weather, description);
+
+
+
+
 		}).fail(function(error){
 			console.log('fail(): ' + error);
 		})
 	}
 });
 
-
-
-// &#8457  fahre
 
 
 

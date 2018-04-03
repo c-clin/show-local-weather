@@ -58,10 +58,17 @@ body {
 #onError {
 	text-align: center;
 	color: #FFFFFF;
+	font-size: 1.5em;
+}
+
+#icon {
+	position: relative;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .content {
-	margin-top: 30px;
 	padding: 20px 15px 20px 15px;
 	display: flex;
 	flex-wrap: wrap;

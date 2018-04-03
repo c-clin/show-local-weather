@@ -14,10 +14,11 @@ body {
 }
 
 #title {
+	font-family: 'Amatic SC', cursive;
 	text-align: center;
 	margin-top: 0;
 	padding-top: 20px;
-	font-size: 30px;
+	font-size: 50px;
 }
 
 #button {
@@ -34,11 +35,13 @@ body {
 	font-family: 'Pacifico', cursive;;
 	left: 50%;
 	transform: translateX(-50%);
+	transition: .3s ease-in-out;
 }
 
 #button:hover {
 	background-color:rgba(255,255,255,0.4);
 	color: rgba(0,0,0,1);
+	transition: .3s ease-in-out;
 }
 
 .content {
@@ -49,7 +52,7 @@ body {
 
 .weatherBox {
 	position: relative;
-	background-color: rgba(255,255,255,0.4);
+	background-color: rgba(255,255,255,0.6);
 	color: rgba(0,0,0,1);
 	margin: 10px;
 	box-sizing: border-box;
@@ -57,14 +60,22 @@ body {
     border-radius: 10px;
 	text-align: center;
     font-size: 20px;
+    box-shadow: 5px 6px 8px #3d3d3d;
+
 }
 
-#fahrenheit {
-	display: block;
+.tempToggle {
+	border: 1px solid black;
+	padding: 5px 10px;
+	outline: none;
+	cursor: pointer;
+	background-color: transparent;
+	transition: .4s ease-in-out;
 }
 
-#celsius {
-	display: block;
+.tempToggle:hover {
+	background-color: #ffda79;
+	transition: .4s ease-in-out;
 }
 
 .modal {
@@ -92,7 +103,7 @@ body.loading .modal {
 /*large screens*/
 @media only screen and (min-width: 769px) {
 	#title {
-		font-size: 40px;
+		font-size: 60px;
 	}
 
 	#button {

@@ -54,6 +54,9 @@ $body = $("body");
 			var name = data.name;
 			var country = data.sys.country;			
 			var celsius = data.main.temp;
+			var humidity = data.main.humidity;
+			var windSpeed = data.wind.speed;
+			var clouds = data.clouds.all;
 			var icon = data.weather[0].icon;
 			var weather = data.weather[0].main;
 			var description = data.weather[0].description;
@@ -68,6 +71,10 @@ $body = $("body");
 			$("#fahrenheit").html(roundedF + '&#8457');
 			$("#icon").html('<img src="' + icon + '">');
 			$("#weather").html(weather);
+			$("#humidity").html(humidity + "%");
+			$('#windSpeed').html(windSpeed + "mph");
+			$('#clouds').html(clouds + '%');
+
 
 
 

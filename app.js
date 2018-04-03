@@ -1,12 +1,13 @@
-$body = $("body");
-
-$(document).on({
-    ajaxStart: function() { $body.addClass("loading");    },
-     ajaxStop: function() { $body.removeClass("loading"); }    
-});
 
 
 $(document).ready(function(){
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading"); },
+    ajaxStop: function() { $body.removeClass("loading"); }    
+});
+	
 	var demo = $('#demo');
 	var getLocationButton = $('#button');
 	var latitude;
@@ -54,7 +55,7 @@ $(document).ready(function(){
 
 
 
-// &#8457  fahrenheit html code
+// &#8457  fahre
 
 
 

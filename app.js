@@ -14,11 +14,12 @@ $(document).ready(function(){
 
 	getLocationButton.on('click', getLocation);
 
+	// get the user's permission to access their current coordinates
 	function getLocation() {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(showWeather);
 		} else {
-			demo.html('Geolocation is not supported by your browser');
+			demo.html('Geolocation is not supported by your browser.');
 		}
 	}
 
@@ -51,6 +52,9 @@ $(document).ready(function(){
 	}
 });
 
+
+
+// &#8457  fahrenheit html code
 
 
 

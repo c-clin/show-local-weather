@@ -1,3 +1,11 @@
+$body = $("body");
+
+$(document).on({
+    ajaxStart: function() { $body.addClass("loading");    },
+     ajaxStop: function() { $body.removeClass("loading"); }    
+});
+
+
 $(document).ready(function(){
 	var demo = $('#demo');
 	var getLocationButton = $('#button');
@@ -29,9 +37,10 @@ $(document).ready(function(){
 			var icon = data.weather[0].icon;
 			var weather = data.weather[0].main;
 			var description = data.weather[0].description;
+
 			$("#name").html(name + ', ');
 			$("#country").html(country);
-			$("#temp").html(temp);
+			$("#temp").html(temp + '&#8451');
 			$("#icon").html('<img src="' + icon + '">');
 			$("#weather").html(weather);
 
@@ -39,8 +48,6 @@ $(document).ready(function(){
 		}).fail(function(error){
 			console.log('fail(): ' + error);
 		})
-
-
 	}
 });
 

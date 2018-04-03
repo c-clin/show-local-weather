@@ -1,3 +1,38 @@
 .container {
 	/*Photo by Luca Bravo on Unsplash*/
 }
+
+#title {
+	text-align: center;
+}
+
+#button {
+	position: relative;
+	text-align: center;
+	padding: 20px 25px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+
+body.loading .modal {
+    overflow: hidden;   
+}
+
+body.loading .modal {
+    display: block;
+}

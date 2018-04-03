@@ -7,7 +7,7 @@ $(document).on({
     ajaxStart: function() { $body.addClass("loading"); },
     ajaxStop: function() { $body.removeClass("loading"); }    
 });
-	
+
 	var demo = $('#demo');
 	var getLocationButton = $('#button');
 	var latitude;
@@ -39,10 +39,12 @@ $(document).on({
 			var icon = data.weather[0].icon;
 			var weather = data.weather[0].main;
 			var description = data.weather[0].description;
+			var fahrenheit = temp * (9/5) + 32;
+			var roundedF = fahrenheit.toFixed(2);
 
 			$("#name").html(name + ', ');
 			$("#country").html(country);
-			$("#temp").html(temp + '&#8451');
+			$("#temp").html(roundedF + '&#8457');
 			$("#icon").html('<img src="' + icon + '">');
 			$("#weather").html(weather);
 

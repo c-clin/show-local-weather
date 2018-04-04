@@ -7,7 +7,7 @@ $body = $("body");
 	    ajaxStart: function() { $body.addClass("loading"); },
 	    ajaxStop: function() { $body.removeClass("loading"); }    
 	});
-
+	
 	var getLocationButton = $('#button');
 	var tempToggle = $('.tempToggle');
 	var error = $('#onError');

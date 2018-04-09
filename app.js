@@ -52,8 +52,6 @@ $body = $("body");
 		greeting = "Welcome!";
 	}
 
-	console.log(greeting);
-
 	$('#greeting').html(greeting).fadeIn(1200);
 
 	// get weather api call

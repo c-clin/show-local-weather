@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 $body = $("body");
 
@@ -38,6 +36,25 @@ $body = $("body");
 			error.html('Error: Geolocation is not supported by your browser.');
 		}
 	}
+
+	// greeting
+	var today = new Date();
+	var thisHour = today.getHours();
+	var greeting;
+
+	if (thisHour > 18) {
+		greeting = "Good evening!";
+	} else if (thisHour > 12) {
+		greeting = "Good afternoon!";
+	} else if (thisHour > 0) {
+		greeting = "Good morning!";
+	} else {
+		greeting = "Welcome!";
+	}
+
+	console.log(greeting);
+
+	$('#greeting').html(greeting).fadeIn(1200);
 
 	// get weather api call
 	function showWeather(position){
